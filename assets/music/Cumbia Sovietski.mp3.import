@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgapntm5d66p4"
+path="res://.godot/imported/Cumbia Sovietski.mp3-6ef2ca2ff9c381420147bbf1b6ec43b9.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Cumbia Sovietski.mp3"
+dest_files=["res://.godot/imported/Cumbia Sovietski.mp3-6ef2ca2ff9c381420147bbf1b6ec43b9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

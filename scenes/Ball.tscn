@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqhx67corbnc7"]
+
+[ext_resource type="Texture2D" uid="uid://cbqgc74rjw2mm" path="res://assets/sprites/Ball.png" id="1"]
+[ext_resource type="Script" path="res://client/Ball.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://b04c4dkxe55cb" path="res://assets/sounds/ball-kick.wav" id="3"]
+
+[sub_resource type="PhysicsMaterial" id="1"]
+friction = 0.25
+rough = true
+bounce = 5.0
+
+[sub_resource type="CircleShape2D" id="2"]
+radius = 22.4401
+
+[node name="Ball" type="RigidBody2D"]
+mass = 0.408163
+physics_material_override = SubResource("1")
+gravity_scale = 0.0
+linear_damp = 5.0
+angular_damp = 100.0
+script = ExtResource("2")
+
+[node name="BallSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1")
+
+[node name="BallCam" type="Camera2D" parent="."]
+limit_left = -200
+limit_top = -200
+limit_right = 2180
+limit_bottom = 1480
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[node name="OutsideView" type="Node2D" parent="BallCam"]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("2")
+
+[node name="KickAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3")
+volume_db = 12.0
+max_distance = 20000.0
