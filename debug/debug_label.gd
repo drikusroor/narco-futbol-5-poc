@@ -1,7 +1,7 @@
 extends Label
 
 func _process(_delta):
-	var entities = get_node("/root/Main/EntityArray").get_children()
+	var entities = get_node("/root/Main/TileMap/EntityArray").get_children()
 
 	self.text = ""
 	for entity in entities:
